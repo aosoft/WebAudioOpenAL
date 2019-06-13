@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<Button id="btnPlay">Play</Button>
+<Button id="btnStop">Stop</Button>
+<script type="module">
+    import Module from './cmake-build-debug/WebAudioOpenAL.js';
+
+    document.getElementById('btnPlay').addEventListener('click', function() {
+        Module.startPlay();
+    });
+
+    document.getElementById('btnStop').addEventListener('click', function() {
+        Module.stopPlay();
+    });
+
+</script>
+</body>
+</html>
+<!--
+export default Module;
+-->
