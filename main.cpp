@@ -127,7 +127,7 @@ private:
 		short buf[BufLen];
 		for (auto& r : buf)
 		{
-			r = std::sin(static_cast<double>(sampleNumber) * 440 * 2 * 3.14159 / sampleRate) * 32767;
+			r = std::sinf(static_cast<float>(sampleNumber) * 440 * 2 * 3.14159f / sampleRate) * 32767;
 			sampleNumber++;
 		}
 
@@ -167,7 +167,7 @@ void StopPlay()
 	g_player.release();
 }
 
-EMSCRIPTEN_BINDINGS(mucom88)
+EMSCRIPTEN_BINDINGS(WebAudioOpenAL)
 {
 	emscripten::function("startPlay", &StartPlay);
 	emscripten::function("stopPlay", &StopPlay);
